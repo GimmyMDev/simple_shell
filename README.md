@@ -1,1 +1,1 @@
-Write a UNIX command line interpreter.
+Simple shell 0.1 +
