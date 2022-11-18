@@ -9,10 +9,10 @@
 int checker(char **cmd, char *buf)
 {
 	if (handle_builtin(cmd, buf))
-			return (1);
+	return (1);
 	else if (**cmd == '/')
 	{
-			execution(cmd[0], cmd);
+	execution(cmd[0], cmd);
 	return (1);
 	}
 	return (0);
@@ -64,18 +64,19 @@ char **tokenizer(char *line)
 
 	buf = _strdup(line);
 	if (!buf)
-		return (NULL);
+	return (NULL);
 	bufpt = buf;
 
 	while (*bufpt)
 	{
-		if (_strchr(delim, *bufpt) != NULL && flag == 0)
+	if (_strchr(delim, *bufpt) != NULL && flag == 0)
 		{
-							tokensize++;
-							flag = 1;										}
-		else if (_strchr(delim, *bufpt) == NULL && flag == 1)
-							flag = 0;
-		bufpt++;
+	tokensize++;
+	flag = 1;
+		}
+	else if (_strchr(delim, *bufpt) == NULL && flag == 1)
+	flag = 0;
+	bufpt++;
 	}
 	tokens = malloc(sizeof(char *) * (tokensize + 1));
 	token = strtok(buf, delim);
@@ -86,8 +87,8 @@ char **tokenizer(char *line)
 			return (NULL);
 		}
 		token = strtok(NULL, delim);
-			index++;
+		index++;
 	}
-	tokens[index] = '\0';														free(buf);
+	tokens[index] = '\0'														free(buf);
 	return (tokens);
 }
