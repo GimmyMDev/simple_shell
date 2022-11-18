@@ -9,6 +9,7 @@
 *NULL on failure
 */
 char *test_path(char **path, char *cmd)
+
 {
 	int i = 0;
 	char *result;
