@@ -25,7 +25,6 @@ char *test_path(char **path, char *cmd)
 }
 
 /**
-*
 *append_path - adds path to command
 *@path: path of command
 *@command: user entered command
@@ -47,15 +46,19 @@ char *append_path(char *path, char *cmd)
 
 	if (!buf)
 		return (NULL);
-	while (path[i])									{
+	while (path[i])
+	{
 		buf[i] = path[i];
 		i++;
+
 	}
-	if (path[i - 1] != '/')								{
+	if (path[i - 1] != '/')
+	{
 		buf[i] = '/';
 		i++;
 	}
-	while (cmd[j])									{
+	while (cmd[j])
+	{
 		buf[i + j] = cmd[j];
 		j++;
 	}
@@ -77,7 +80,7 @@ int handle_builtin(char **cmd, char *line)
 
 	if (_strcmp(*cmd, builtin.env) == 0)
 	{
-		print_env();									return (1);
+		print_env()									return (1);
 											}
 	else if (_strcmp(*cmd, builtin.exit) == 0)
 	{
